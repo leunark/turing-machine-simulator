@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<!--Import Google Icon Font-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<!--Import Google Abel Font (Alternativ Fonts: Inconsolata, Raleway, Comfortaa)-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+	<!--Import materialize.css-->
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<!--Import style.css-->
+	<link rel="stylesheet" href="css/turing.css"/>
+
+	<meta charset="UTF-8">
+	<title>Login Form with Materializecss</title> 
+</head>
+
+<body>
+	<main>
+		<div class="section"></div>
+		
+		<div class="container">
+
+			<h4 class="title">Turing Machine Simulator</h4>
+
+			<div class="center" id="container">
+				<div id="tape">
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2" id="start">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+					<div class="cell z-depth-2">
+						0
+					</div>
+					<div class="cell z-depth-2">
+						1
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="input-field col s6">
+					<input id="startInput" type="text">
+					<label for="startInput">Start value</label>
+				</div>
+
+				<div class="input-field col s6">
+					<label>Speed</label>
+					<p class="range-field">
+						<input type="range" id="speedInput" min="0" max="100">
+					</p>
+				</div>
+				
+				<div class="input-field col s12">
+					<textarea id="commandsInput" class="materialize-textarea"></textarea>
+					<label for="commandsInput">Commands</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="section"></div>
+		<div class="section"></div>
+	</main>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.js"></script>
+	<script type="text/javascript" src="js/turing.js"></script>
+
+</body>
+</html>

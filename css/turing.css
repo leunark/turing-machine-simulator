@@ -1,0 +1,66 @@
+html {
+	font-family: 'Abela', 'Calibri', sans-serif;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	background: #FFFFFF;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+h1 {
+	color: #4db6ac;
+}
+h2 {
+	color: #4db6ac;
+}
+h3 {
+	color: #4db6ac;
+}
+h4 {
+	color: #4db6ac;
+}
+h5 {
+	color: #4db6ac;
+}
+
+/* use center to center img */
+img.center {
+	display: block;
+	margin: 0 auto;
+}
+
+div#container {
+	overflow: hidden;
+	padding: 10px;
+}
+
+div#tape {
+	/* relative position is very important to be able to scroll to a tile element (position().left relative to the parent) */
+	position: relative; 
+	display: inline-block;
+	white-space: nowrap;
+	max-height: 500px;
+}
+
+div.cell {
+	display:inline-block;
+	
+	/* size */
+	min-height: 100px;
+	min-width: 100px;
+
+	/* center content */
+	text-align: center;
+	vertical-align: middle;
+	line-height: 100px;
+}
+
+#speedInput {
+	margin-top: 28px;
+}
