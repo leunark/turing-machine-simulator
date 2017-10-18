@@ -52,15 +52,24 @@ div.cell {
 	display:inline-block;
 	
 	/* size */
-	min-height: 100px;
-	min-width: 100px;
+	min-height: 50px;
+	min-width: 50px;
 
 	/* center content */
 	text-align: center;
 	vertical-align: middle;
-	line-height: 100px;
+	line-height: 50px;
 }
 
 #speedInput {
-	margin-top: 28px;
+	margin-top: 25px;
+}
+
+#set {
+	margin-left: -15px;
+	margin-top: 20px;
+}
+#set a{
+	padding-left: 10px;
+	padding-right: 10px;
 }
