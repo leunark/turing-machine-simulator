@@ -65,11 +65,13 @@ div.cell {
 	margin-top: 25px;
 }
 
-#set {
+#setButton {
 	margin-left: -15px;
 	margin-top: 20px;
 }
-#set a{
+#setButton a{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
+

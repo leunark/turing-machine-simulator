@@ -74,9 +74,16 @@
   actualState && newSate: String word, begins with letter
   readSymbol: L (moveLeft), R (moveRight), ß (delete)
 
-  Example input:
+  Right Input:
   f(q2,a)=(q1,R)
   f(q34,6)=(q21,L)
   f(q2,y)=(q4,ß)
+
+  Wrong input:
+  f(2q2,a)=(q1,R)
+  f(q34,6)=(q21,g)
+  f(q2,yd)=(q4,ß)
+  f(q4,yd)(q4,ß)
+  f(q2,yd)=(q4ß)
 */
 

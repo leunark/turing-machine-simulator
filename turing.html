@@ -22,48 +22,69 @@
 			
 			<!-- Title -->
 			<h4 class="title">Turing Machine Simulator</h4>
+			<div class="center">
+				<a id="pointer"><i class="material-icons">arrow_drop_down</i></a>
+			</div>
 			
+
 			<!-- Tape -->
 			<div class="center" id="container">
 				<div id="tape">
-					<div class="cell z-depth-2" id="startCell">-</div>
 				</div>
 			</div>
 
 			<div class="row">
 				<!-- Start value -->
-				<div class="input-field col s5">
-					<input id="startInput" type="text" tabindex="1">
-					<label for="startInput">Start value</label>
+				<div class="input-field col s6 m6">
+					<input id="startValueInput" type="text" tabindex="1">
+					<label for="startValueInput">Start value</label>
+				</div>
+
+				<!-- Empty symbol -->
+				<div class="input-field col s6 m2">
+					<input id="emptyInput" type="text" tabindex="2">
+					<label for="emptyInput">Blank</label>
 				</div>
 				
-				<!-- Set button -->
-				<div class="input-field col s2" id="setButton">
-					<a class="waves-effect waves-light btn">Set</a>
+				<!-- Start state -->
+				<div class="input-field col s6 m2">
+					<input id="startStateInput" type="text" tabindex="2">
+					<label for="startStateInput">Start</label>
 				</div>
-				
+
+				<!-- End state -->
+				<div class="input-field col s6 m2">
+					<input id="endStateInput" type="text" tabindex="2">
+					<label for="endStateInput">End</label>
+				</div>
+
 				<!-- Range field -->
-				<div class="input-field col s5">
+				<div class="input-field col s12 m12">
 					<label>Speed</label>
 					<p class="range-field">
-						<input type="range" id="speedInput" min="1" max="100" value="50" tabindex="3">
+						<input type="range" id="speedInput" min="1" max="100" value="50" tabindex="4">
 					</p>
 				</div>
 				
-				<!-- Commands input -->
+				<!-- Command input -->
 				<div class="input-field col s12">
-					<textarea id="commandsInput" class="materialize-textarea" tabindex="2"></textarea>
-					<label for="commandsInput">Commands</label>
+					<textarea id="commandInput" class="materialize-textarea" tabindex="3"></textarea>
+					<label for="commandInput">Command</label>
 				</div>
 			</div>
 			
 			<!-- Buttons -->
 			<div class="center">
-				<a class="btn-floating btn-large waves-effect waves-light" id="testButton"><i class="material-icons">add</i></a>
-				<a class="btn-floating btn-large waves-effect waves-light" id="startButton"><i class="material-icons">play_arrow</i></a>
-				<a class="btn-floating btn-large waves-effect waves-light" id="pauseButton"><i class="material-icons">pause</i></a>
-				<a class="btn-floating btn-large waves-effect waves-light" id="cancelButton"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating btn-large waves-effect waves-light" id="playPauseButton"><i class="material-icons">play_arrow</i></a>
+				<a class="btn-floating btn-large waves-effect waves-light" id="resetButton"><i class="material-icons">cancel</i></a>
 			</div>
+			<!--
+			<div class="center">
+				<a class="btn-floating btn-large waves-effect waves-light" id="leftButton"><i class="material-icons">keyboard_arrow_left</i></a>
+				<a class="btn-floating btn-large waves-effect waves-light" id="writeButton"><i class="material-icons">close</i></a>
+				<a class="btn-floating btn-large waves-effect waves-light" id="rightButton"><i class="material-icons">keyboard_arrow_right</i></a>
+			</div>
+			-->
 		</div>
 
 		<div class="section"></div>
@@ -78,6 +99,5 @@
 	<script type="text/javascript" src="js/Parser.js"></script>
 	<script type="text/javascript" src="js/Controller.js"></script>
 	<script type="text/javascript" src="js/run.js"></script>
-	<!--<script type="text/javascript" src="js/turing.js"></script>-->
 </body>
 </html>
