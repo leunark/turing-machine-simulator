@@ -53,6 +53,7 @@ class View {
 		}
 		this.centerHead();
 		this.updateTape();
+		this.setInfo("??","??","??");
 	}
 
 	/* update tape with new values: start value and empty value */
@@ -82,6 +83,12 @@ class View {
 	/* prepends an empty cell to the tape */
 	prependCell(){
 		$("#tape").prepend(this.standardCell);
+	}
+
+	setInfo(lastStateInfo, nextStateInfo, functionInfo){
+		$("#lastStateInfo").text(lastStateInfo);
+		$("#nextStateInfo").text(nextStateInfo);
+		$("#functionInfo").text(functionInfo);
 	}
 
 	/* move head by 1 cell to the right */

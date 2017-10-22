@@ -74,4 +74,13 @@ div.cell {
 	padding-right: 10px;
 }
 
+div.state-info {
+	padding: 5px;
+	display: inline-block;
+}
+div.state-info div {
+	display: inline-block;
+	color: #78909c;
+}
+
 

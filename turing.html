@@ -21,13 +21,34 @@
 		<div class="section"></div>
 		
 		<div class="container">
-			
+
 			<!-- Title -->
 			<h4 class="title">Turing Machine Simulator</h4>
+			
+			<div class="row">
+				<div class="col s4 center">
+					<div class="state-info z-depth-1">
+						<div>last state: </div>
+						<div id="lastStateInfo"></div>
+					</div>
+				</div>
+				<div class="col s4 center">
+					<div class="state-info z-depth-1">
+						<div>next state: </div>
+						<div id="nextStateInfo"></div>
+					</div>
+				</div>
+				<div class="col s4 center">
+					<div class="state-info z-depth-1">
+						<div>function: </div>
+						<div id="functionInfo"></div>
+					</div>
+				</div>
+			</div>
+
 			<div class="center">
 				<a id="pointer"><i class="material-icons">arrow_drop_down</i></a>
 			</div>
-			
 
 			<!-- Tape -->
 			<div class="center" id="container">
@@ -81,19 +102,19 @@
 				<a class="btn-floating btn-large waves-effect waves-light" id="resetButton"><i class="material-icons">close</i></a>
 			</div>
 
+			<div class="section"></div>
+			<div class="section"></div>
 		</div>
+		</main>
 
-		<div class="section"></div>
-		<div class="section"></div>
-	</main>
-	
-	<!-- Imports -->
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="js/materialize.js"></script>
-	<script type="text/javascript" src="js/View.js"></script>
-	<script type="text/javascript" src="js/Model.js"></script>
-	<script type="text/javascript" src="js/Parser.js"></script>
-	<script type="text/javascript" src="js/Controller.js"></script>
-	<script type="text/javascript" src="js/run.js"></script>
-</body>
-</html>
+		<!-- Imports -->
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="js/materialize.js"></script>
+		<script type="text/javascript" src="js/cookies.js"></script>
+		<script type="text/javascript" src="js/View.js"></script>
+		<script type="text/javascript" src="js/Model.js"></script>
+		<script type="text/javascript" src="js/Parser.js"></script>
+		<script type="text/javascript" src="js/Controller.js"></script>
+		<script type="text/javascript" src="js/run.js"></script>
+	</body>
+	</html>

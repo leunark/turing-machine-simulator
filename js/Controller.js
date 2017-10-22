@@ -19,10 +19,17 @@ class Controller {
 			} else {
 				this.view.writeSymbol(result["action"]);
 			}
+			// update info with information about next step
+			this.view.setInfo(
+				result["currentState"],result["subsequentState"],
+				"f("+result["currentState"]+","+result["symbol"]+")=("+result["subsequentState"]+","+result["action"]+")"
+			);
 	 	// simulation end
 		}else{
 			console.log("No more action could be found!");
+			// stop machine running
 			clearInterval(this.ticker);
+			// check if end state is reached
 			if(this.model.currentState = this.model.endState){
 				console.log("End state reached!");
 			}
@@ -51,7 +58,7 @@ class Controller {
     			that.processStep();
     		}
     	}
-    }, 10);
+    }, 10); // increasing this value will lead to stuttering animations when animation speed is low
   }
 
   /* pause simulator */

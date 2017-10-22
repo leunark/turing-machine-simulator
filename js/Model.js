@@ -25,10 +25,7 @@ class Model {
 	analyseMachineAction(cellSymbol){	
 		if(this.stateDictionary[this.currentState]){
 			if(this.stateDictionary[this.currentState][cellSymbol]){
-				this.stateDictionary[this.currentState][cellSymbol]["action"];
-				var result = new Object;
-				result["action"] = this.stateDictionary[this.currentState][cellSymbol]["action"];
-				result["subsequentState"] = this.stateDictionary[this.currentState][cellSymbol]["subsequentState"];
+				var result = this.stateDictionary[this.currentState][cellSymbol];
 				this.currentState = this.stateDictionary[this.currentState][cellSymbol]["subsequentState"];
 				return result;
 			}else{

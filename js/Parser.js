@@ -21,20 +21,3 @@ class Parser {
 		return result;
 	}
 }
-
-/*
-	False Input Check:
-	f(2q0,a)=(q1,ß)
-	f(3q1,ß)=(q2,R)
-	f(4q2,a)=(q2,R)
-	f(5q2,b)=(q3,R)
-	f(7q3,b)=(q3,R)
-	f(q3,ß)=(6q4,L)
-	f(q4,b)=(+q5,ß)
-	f(q5,ß)=(#q6,L)
-	f(q6,ß)=(?qe,ß)
-	f(q6,b)=(ßq7,L)
-	f(q7,b)=(5q7,L)
-	f(q7,a)=(Qq7,L)
-	f(q7,ß)=(.q0,R)
-*/
