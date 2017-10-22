@@ -5,11 +5,13 @@ class Controller {
 		this.paused = false;
 		this.canceled = false;
 		this.tickStamp = 0;
+		this.ticker;
 	}
 
 	processStep(){
+		// analyse action from model and perform in view
 		var result = this.model.analyseMachineAction(this.view.readSymbol());
-		if(result !== null){
+		if(result){
 			if(result["action"] === "l" || result["action"] === "L"){
 				this.view.moveHeadLeft();
 			} else if(result["action"] === "r" || result["action"] === "R"){
@@ -17,30 +19,39 @@ class Controller {
 			} else {
 				this.view.writeSymbol(result["action"]);
 			}
+	 	// simulation end
 		}else{
-			console.log("Machine doesnt find");
+			console.log("No more action could be found!");
+			clearInterval(this.ticker);
+			if(this.model.currentState = this.model.endState){
+				console.log("End state reached!");
+			}
 		}
 	}
 
 	/* start simulator */
 	startSimulator(){
+		// prepare simulator
+		this.view.disableInputs();
 		this.model.passMachineConfiguration(this.view.startValueInput,this.view.startStateInput,this.view.endStateInput,this.view.emptyInput);
 		this.model.generateStateDictionary(this.view.commandInput);
 
+		// set start values
+		this.canceled = false;
+		this.paused = false;
+		this.tickStamp = 0;
+		this.view.tick = 0;
+
+		// process steps
 		var that = this;
-    var ticker = setInterval(function() { // this code is executed every 500 milliseconds
-    	if(that.canceled){
-    		clearInterval(ticker);
-    	}
+    this.ticker = setInterval(function() { // this code is executed every 500 milliseconds
     	if(!that.paused){
-    		console.log("TickStamp:"+that.tickStamp);
-    		console.log("Tick:"+that.view.tick);
-    		if(that.view.tick == that.tickStamp){
+    		if(that.view.tick == that.tickStamp){ // this will only happen, when the animation is complete and the callback function increased the tick
     			that.tickStamp++;
     			that.processStep();
     		}
     	}
-    }, 500);
+    }, 10);
   }
 
   /* pause simulator */
@@ -55,15 +66,8 @@ class Controller {
 
   /* cancel simulator and reset to inital state */
   resetSimulator(){
-  	console.log("clicked");
-  	this.canceled = true;
-  	this.paused = true;
-  	this.view.resetMachine();
-  }
-
-  /* empty simulator, empty all input values and tape */
-  emptySimulator(){
-
+  	clearInterval(this.ticker);
+  	this.view.prepareView();
   }
 
   /* export simulator as pdf */

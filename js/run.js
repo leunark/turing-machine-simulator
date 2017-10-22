@@ -9,7 +9,7 @@
 
 		/* resizing window will update head's position */
 		$(window).resize(function() {
-			controller.view.moveHeadTo(controller.view.currentCell);
+			controller.view.centerHead();
 		});
 
 		/* changing start value will automatically update view */
@@ -37,10 +37,11 @@
 			}
 		});
 
-		/* cancel simulator */
+		/* reset simulator */
 		$("#resetButton").click(function(){
 			controller.resetSimulator();
-			initialStart = true; // canceling simulator will make an initial start again possible OMGOGOGMGMO RESETBTTON UND NICHT CANCELBUTTON
+			initialStart = true; // reseting simulator will make an initial start again possible
+			$("#playPauseButton").find("i").text("play_arrow"); // set to play button to show the possibility to start the simulator again
 		});
 
 		$("#rightButton").click(function(){

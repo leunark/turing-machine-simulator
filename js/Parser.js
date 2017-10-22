@@ -2,7 +2,7 @@ class Parser {
 	
 	/* split the text into lines, remove empty lines and return an array of the lines */
 	static splitText(text){
-		var regex = /([^\n\r]+)/g; // IMPROVEMENTS
+		var regex = /([^\n\r]+)/g;
 		var result = text.match(regex);
 		return result;
 	}

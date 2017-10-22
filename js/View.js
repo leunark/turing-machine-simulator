@@ -33,11 +33,13 @@ class View {
 			"f(q7,b)=(q7,L)\n"+
 			"f(q7,a)=(q7,L)\n"+
 			"f(q7,ß)=(q0,R)\n");
+		$("#commandInput").trigger('autoresize');
 	}
 
 	/* instantiate cells */
 	prepareView(){
-		// clean tape
+		this.tick = 0;
+		this.enableInputs();
 		$("#tape").empty();
 
 		this.appendCell(); // create first cell
@@ -49,7 +51,7 @@ class View {
 			this.prependCell();
 			this.appendCell();
 		}
-		this.moveHeadTo(this.currentCell);
+		this.centerHead();
 		this.updateTape();
 	}
 
@@ -95,7 +97,6 @@ class View {
 			}, this.duration / this.speedInput, 'linear'
 			).promise().done(function(){
 				that.tick++;
-				console.log(that.tick);
 			});  
 		}
 	}
@@ -114,17 +115,13 @@ class View {
 			}, this.duration / this.speedInput, 'linear'
 			).promise().done(function(){
 				that.tick++;
-				console.log(that.tick);
 			});  
 		}
 	}
 
 	/* move head to the passed cell */
-	moveHeadTo(cell){
-		if(cell.length!=0){
-			this.currentCell = cell;
-			$("#container").scrollLeft(cell.position().left - $("#container").width()/2 + cell.width()*0.5);
-		}
+	centerHead(){
+		$("#container").animate({scrollLeft: this.currentCell.position().left - $("#container").width()/2 + this.currentCell.width()*0.5}, 10, 'linear');
 	}
 
 	/* write symbol in current cell  */
@@ -138,9 +135,20 @@ class View {
 		return this.currentCell.text();
 	}
 
-	/* reset whole machine */
-	resetMachine(){
-		this.prepareView();
+	disableInputs(){
+		$("#startValueInput").attr("disabled", true);
+		$("#emptyInput").attr("disabled", true);
+		$("#startStateInput").attr("disabled", true);
+		$("#endStateInput").attr("disabled", true);
+		$("#commandInput").attr("disabled", true);
+	}
+
+	enableInputs(){
+		$("#startValueInput").attr("disabled", false);
+		$("#emptyInput").attr("disabled", false);
+		$("#startStateInput").attr("disabled", false);
+		$("#endStateInput").attr("disabled", false);
+		$("#commandInput").attr("disabled", false);
 	}
 
 	/* get start value of the input box with id=startValueInput*/

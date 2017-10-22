@@ -48,16 +48,19 @@ class Model {
 
 		// split command input into several lines and save them in an array
 		var commandArray = Parser.splitText(commandInput);
-		
-		//console.log(commandArray);
+		if(!commandArray){
+			console.log("Command lines in commandArray are empty!");
+			return;
+		}
 
 		// loop through every line 
 		for (var commandLine of commandArray){
+
 			// fetch parameters from command line with the parser
 			var commandParameters = Parser.parseLine(commandLine);
 
 			// if parser cant match the line on regex, reject further process with this line
-			if(commandParameters.length == 0){
+			if(!commandParameters){
 				continue;
 			}
 
@@ -67,7 +70,6 @@ class Model {
 			parameterObject["symbol"]=commandParameters[2];
 			parameterObject["subsequentState"]=commandParameters[3];
 			parameterObject["action"]=commandParameters[4]; // ignore case 
-			//console.log(parameterObject);
 
 			// load parameters into the state tree
 			if(!this.stateDictionary.hasOwnProperty(commandParameters[1])){
@@ -76,14 +78,6 @@ class Model {
 			}else{
 				this.stateDictionary[commandParameters[1]][commandParameters[2]]=parameterObject;
 			}
-
 		}
-		//console.log(this.stateDictionary);
 	}
-
-	/* find with the read symbol and the current state the right entry and return the result */
-	scanDictionary(state,symbol){
-		return this.stateDictionary[state][symbol];
-	}
-
 }
