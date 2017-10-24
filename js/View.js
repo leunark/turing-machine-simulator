@@ -158,6 +158,14 @@ class View {
 		$("#commandInput").attr("disabled", false);
 	}
 
+	setPauseButton(){
+		$("#playPauseButton").find("i").text("pause");
+	}
+
+	setPlayButton(){
+		$("#playPauseButton").find("i").text("play_arrow");
+	}
+
 	/* get start value of the input box with id=startValueInput*/
 	get startValueInput(){
 		return Parser.removeSpaces($("#startValueInput").val());

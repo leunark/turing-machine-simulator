@@ -26,19 +26,19 @@
 			<h4 class="title">Turing Machine Simulator</h4>
 			
 			<div class="row">
-				<div class="col s4 center">
+				<div class="col s3 m4 center">
 					<div class="state-info z-depth-1">
-						<div>last state: </div>
+						<div>last: </div>
 						<div id="lastStateInfo"></div>
 					</div>
 				</div>
-				<div class="col s4 center">
+				<div class="col s3 m4 center">
 					<div class="state-info z-depth-1">
-						<div>next state: </div>
+						<div>next: </div>
 						<div id="nextStateInfo"></div>
 					</div>
 				</div>
-				<div class="col s4 center">
+				<div class="col s6 m4 center">
 					<div class="state-info z-depth-1">
 						<div>function: </div>
 						<div id="functionInfo"></div>
@@ -95,16 +95,18 @@
 					<label for="commandInput">Command</label>
 				</div>
 			</div>
-			
-			<!-- Buttons -->
-			<div class="center">
-				<a class="btn-floating btn-large waves-effect waves-light" id="playPauseButton"><i class="material-icons">play_arrow</i></a>
-				<a class="btn-floating btn-large waves-effect waves-light" id="resetButton"><i class="material-icons">close</i></a>
-			</div>
 
 			<div class="section"></div>
 			<div class="section"></div>
 		</div>
+
+		<!-- Buttons -->
+		<div class="center" id="controlBar">
+			<a class="btn-floating btn-large waves-effect waves-light" id="playPauseButton"><i class="material-icons">play_arrow</i></a>
+			<a class="btn-floating btn-large waves-effect waves-light" id="resetButton"><i class="material-icons">close</i></a>
+			<a class="btn-floating btn-large waves-effect waves-light" id="stepButton"><i class="material-icons">navigate_next</i></a>
+		</div>
+
 		</main>
 
 		<!-- Imports -->

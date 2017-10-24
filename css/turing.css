@@ -74,6 +74,18 @@ div.cell {
 	padding-right: 10px;
 }
 
+#controlBar {
+	position: fixed;
+	width: 100%;
+	padding: 1.5%;
+	bottom: 0;
+}
+@media screen and (max-width: 1900px) {
+	#controlBar {
+		background-color: rgba(42, 244, 255, 0.12);
+	}
+}
+
 div.state-info {
 	padding: 5px;
 	display: inline-block;
@@ -82,5 +94,6 @@ div.state-info div {
 	display: inline-block;
 	color: #78909c;
 }
+
 
 

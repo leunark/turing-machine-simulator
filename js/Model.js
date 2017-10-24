@@ -10,7 +10,6 @@ class Model {
 
 		/* flexible */
 		this.currentState = "";
-		this.logs = {}; // this logfile will save each step
 	}
 
 	passMachineConfiguration(startValueInput,startStateInput, endStateInput, emptyInput){
