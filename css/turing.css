@@ -80,7 +80,7 @@ div.cell {
 	padding: 1.5%;
 	bottom: 0;
 }
-@media screen and (max-width: 1900px) {
+@media screen and (max-width: 2000px) {
 	#controlBar {
 		background-color: rgba(42, 244, 255, 0.12);
 	}
@@ -94,6 +94,23 @@ div.state-info div {
 	display: inline-block;
 	color: #78909c;
 }
-
+.box-shadow {
+	background: #f5f5f5;
+	border: 1px solid #f5f5f5;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 1px 1px 7px rgba(0,0,0,.4);
+}
+/*
+.box-marked {
+	background: #ffbe5e;
+	border: 1px solid #ffbe5e;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 1px 1px 7px rgba(0,0,0,.4);
+}
+*/
 
 

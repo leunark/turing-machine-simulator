@@ -7,7 +7,7 @@ class View {
 		this.currentCell;
 		this.duration = 5000; // default duration in ms
 		this.offset = 30;
-		this.standardCell = '<div class="cell z-depth-2">'+this.emptyInput+'</div>'
+		this.standardCell = '<div class="cell box-shadow">'+this.emptyInput+'</div>'
 
 		this.tick = 0;
 		this.prepareView();
